@@ -1,0 +1,146 @@
+[
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000000XDbiAAG"
+    },
+    "Id": "005b0000000XDbiAAG",
+    "Name": "Automated Process",
+    "Email": "daniel.cordoba@00db0000000jzzceao"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000003qQnBAAU"
+    },
+    "Id": "005b0000003qQnBAAU",
+    "Name": "Data.com Clean",
+    "Email": "automatedclean@00db0000000jzzceao.ext"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000005DHbLAAW"
+    },
+    "Id": "005b0000005DHbLAAW",
+    "Name": "System",
+    "Email": "automatedcase@00db0000000jzzceao.ext"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005KI000001bROSYA2"
+    },
+    "Id": "005KI000001bROSYA2",
+    "Name": "deprecated Site Guest User",
+    "Email": "healthcare_customer_portal@00dki000000lhxs2a0.org.force.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005KI000001bRQnYAM"
+    },
+    "Id": "005KI000001bRQnYAM",
+    "Name": "Healthcare Customer Portal Site Guest User",
+    "Email": "healthcare_customer_portal@00dki000000lhxs2a0.org.force.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/0050X000006DJ2oQAG"
+    },
+    "Id": "0050X000006DJ2oQAG",
+    "Name": "B2BMA Integration",
+    "Email": "noreply@salesforce.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/0053X00000FOIqnQAH"
+    },
+    "Id": "0053X00000FOIqnQAH",
+    "Name": "SalesforceIQ Integration",
+    "Email": "salesforceiqintegration@00db0000000jzzceao.ext"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000003q6mDAAQ"
+    },
+    "Id": "005b0000003q6mDAAQ",
+    "Name": "Premier Administrator",
+    "Email": "premiersfdc@00db0000000jzzceao.ext"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/0053X00000EZUUiQAP"
+    },
+    "Id": "0053X00000EZUUiQAP",
+    "Name": "Insights Integration",
+    "Email": "insightsintegration@00db0000000jzzceao.ext"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/0053X00000FMoHbQAL"
+    },
+    "Id": "0053X00000FMoHbQAL",
+    "Name": "Alex Lopez Pedrosa",
+    "Email": "alex.lopez@grifols.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000000Z0ImAAK"
+    },
+    "Id": "005b0000000Z0ImAAK",
+    "Name": "Cristina Martin Mancera",
+    "Email": "cristina.martinm@grifols.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000000ZOIUAA4"
+    },
+    "Id": "005b0000000ZOIUAA4",
+    "Name": "Administrador API",
+    "Email": "gh.it.systems.commercial.foreign.trade.crm.all@grifols.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005KI000001bgncYAA"
+    },
+    "Id": "005KI000001bgncYAA",
+    "Name": "Alex López",
+    "Email": "alex.lopez@grifols.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005KI000001cc6NYAQ"
+    },
+    "Id": "005KI000001cc6NYAQ",
+    "Name": "Raul Lopez Cuesta",
+    "Email": "raul.lopez@grifols.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/0050X0000094ujTQAQ"
+    },
+    "Id": "0050X0000094ujTQAQ",
+    "Name": "Platform Integration User",
+    "Email": "noreply@salesforce.com"
+  },
+  {
+    "attributes": {
+      "type": "User",
+      "url": "/services/data/v50.0/sobjects/User/005b0000000Yy4LAAS"
+    },
+    "Id": "005b0000000Yy4LAAS",
+    "Name": "Chatter Expert",
+    "Email": "noreply@chatter.salesforce.com"
+  }
+]
