@@ -2,11 +2,12 @@ require('dotenv').config();
 const fs = require('fs');
 const { batchIt } = require('@utils/metadataUtils.js');
 const { FILES_DIR } = require('@config/paths.js');
+const { METADATA_TYPES } = require('@enums/constants.js');
 
 const retrieveCertificates = async (connection) => {
     try {
-        const certificatesMetadata = await connection.metadata.list([{ type: 'Certificate' }], process.env.API_VERSION);
-        const certificatesContent = await connection.metadata.read('Certificate', certificatesMetadata.map(cert => cert.fullName));
+        const certificatesMetadata = await connection.metadata.list([{ type: METADATA_TYPES.CERTIFICATE }], process.env.API_VERSION);
+        const certificatesContent = await connection.metadata.read(METADATA_TYPES.CERTIFICATE, certificatesMetadata.map(cert => cert.fullName));
         fs.writeFileSync(FILES_DIR.CERTIFICATES_METADATA_FILE, JSON.stringify(certificatesContent, null, 2));
     } catch (error) {
         console.error('Error retrieving certificates:', error);
@@ -35,7 +36,7 @@ const createCertificatesFromAFile = async (filePath, connection) => {
         const certificatesData = await fs.promises.readFile(filePath, 'utf8');
         const certificates = JSON.parse(certificatesData);
         for (const batch of batchIt(200, certificates)) {
-            await connection.metadata.create('Certificate', batch);
+            await connection.metadata.create(METADATA_TYPES.CERTIFICATE, batch);
         }
     } catch (error) {
         console.error('Error creating certificates:', error);
