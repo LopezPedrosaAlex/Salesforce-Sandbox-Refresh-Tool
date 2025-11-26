@@ -1,4 +1,8 @@
 const { VALUE_TYPES, METADATA_TYPES } = require('@enums/constants.js')
+const Spinnies = require('spinnies');
+
+const spinner = { interval: 80, frames: ['🌒', '🌓', '🌔', '🌕', '🌖', '🌗']}
+const spinnies = new Spinnies({color: 'blue', succeedColor: 'green', spinner});
 
 function batchIt(batchSize, objectToBatch) {
         const batches = [];
@@ -33,7 +37,11 @@ function fixMetadataValues(metadata) {
                         value = value._;
                     }
                     // Only allow string, number, boolean. Convert number/boolean to string, skip others.
-                    if (value === VALUE_TYPES.STRING || value === VALUE_TYPES.NUMBER || value === VALUE_TYPES.BOOLEAN) {
+                    if (
+                        typeof value === VALUE_TYPES.STRING ||
+                        typeof value === VALUE_TYPES.NUMBER ||
+                        typeof value === VALUE_TYPES.BOOLEAN
+                    ) {
                         return { ...valObj, value: escapeXml(String(value)) };
                     } else {
                         // Skip invalid value
@@ -54,10 +62,12 @@ function fixMetadataValues(metadata) {
     return metadata;
 }
 
-
+const getOrgIdentifier = (connection) => {
+    const match = connection.instanceUrl.match(/--([^.]*)\./);
+    return match ? match[1] : '';
+}
 
 const isValidCustomMetadata = (record) => {
-    // Must have fullName, label, and at least one value
     if (!record || typeof record !== METADATA_TYPES.OBJECT) return false;
     if (!record.fullName || !record.label) return false;
     if (!Array.isArray(record.values) || record.values.length === 0) return false;
@@ -69,9 +79,38 @@ const percentCalc = (part, total) => {
     return ((part / total) * 100).toFixed(2);
 };
 
+const sendEmails = async (connection, subject, body, recipients) => {
+    
+    await connection.requestPost('/services/data/v59.0/actions/standard/emailSimple', {    
+        inputs: [{
+            emailSubject: subject,
+            sendRichBody: true,
+            emailBody: body,
+            senderType: 'CurrentUser',
+            emailAddresses: 'alex.lopez@grifols.com'
+        }]
+    });
+
+};
+
+const spinnerInitialization = (spinnerName, connections) => {
+    if (connections.length === 0) {
+        spinnies.add(`${spinnerName}`, { text: ``, color: 'yellow' });
+    } else {
+        connections.forEach(connection => {
+            spinnies.add(`${spinnerName} ${getOrgIdentifier(connection)}`, { text: ``, color: 'yellow' });
+        });
+    }
+
+    return spinnies;
+}
+
 module.exports = {
     batchIt,
     fixMetadataValues,
     isValidCustomMetadata,
-    percentCalc
+    percentCalc,
+    sendEmails,
+    getOrgIdentifier,
+    spinnerInitialization
 };
