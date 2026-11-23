@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --primary-color: #00378d;
+  --secondary-color: #d4e4f4;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--secondary-color);
+  background-opacity: 0.5;
+}
+
+main a:hover {
+  animation: none;
+}
+
+nav a:hover {
+  animation: none;
+}

@@ -1,0 +1,44 @@
+{
+    "name": "refresh-sandbox",
+    "version": "1.0.0",
+    "description": "Project to automatize the refresh on environments",
+    "main": "refresh.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "preRefresh": "node ./src/preRefresh.js",
+        "postRefresh": "node ./src/postRefresh.js",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-jest": "^29.5.0",
+        "eslint-plugin-node": "^11.1.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.7.4"
+    },
+    "author": "Alex López Pedrosa",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.1",
+        "env": "^0.0.2",
+        "express": "^5.2.1",
+        "jsforce": "^3.10.2",
+        "module-alias": "^2.2.3",
+        "nanospinner": "^1.2.2",
+        "socket.io": "^4.8.1",
+        "spinnies": "^0.5.1"
+    },
+    "_moduleAliases": {
+        "@utils": "src/utils",
+        "@enums": "src/enums",
+        "@services": "src/services",
+        "@config": "src/config"
+    }
+}
